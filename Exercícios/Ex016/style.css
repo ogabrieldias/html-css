@@ -1,0 +1,42 @@
+@charset "UTF-8";
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    /* height: 100%;*/    
+}
+
+body{
+    background-image: linear-gradient(90deg, #C4EEF2, #7AB8BF);
+}
+
+main{
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px #012c31;
+    width: 600px;
+    padding: 10px;
+    margin: auto;
+}
+
+h1{
+    color: #025159;
+    text-align: center;
+    text-shadow: 1px 1px 2px #013035;
+}
+
+h2{
+    color: #3E848C;
+}
+
+
+
+/* Color Theme Swatches in Hex */
+.Blue-glitter-banner-1-hex { color: #025159; }
+.Blue-glitter-banner-2-hex { color: #3E848C; }
+.Blue-glitter-banner-3-hex { color: #7AB8BF; }
+.Blue-glitter-banner-4-hex { color: #C4EEF2; }
+.Blue-glitter-banner-5-hex { color: #A67458; }
+
+
+p {
+    text-align: justify;
+}
