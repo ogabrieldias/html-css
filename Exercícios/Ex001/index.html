@@ -1,20 +1,89 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Efeito de Aba Deslizante</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mensagem no Footer</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    form {
+      text-align: center;
+    }
+
+    label {
+      font-size: 18px;
+    }
+
+    input[type="text"] {
+      margin-top: 10px;
+      padding: 10px;
+      font-size: 16px;
+      width: 100%;
+      max-width: 300px;
+      box-sizing: border-box;
+    }
+
+    button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    footer {
+      text-align: center;
+      padding: 10px 20px;
+      background-color: #f1f1f1;
+      font-size: 18px;
+    }
+  </style>
 </head>
 <body>
+  <main>
+    <form id="nameForm">
+      <label for="fullName">Qual é seu nome completo?</label><br>
+      <input type="text" id="fullName" placeholder="Digite seu nome completo" required><br>
+      <button type="submit">Enviar</button>
+    </form>
+  </main>
+  <footer id="footerMessage">Bem-vindo ao site!</footer>
 
-    <div class="container">
-        <button class="toggle-btn">Clique para ver mais informações</button>
-        <div class="info-aba">
-            <p>Essas são as informações adicionais que você queria mostrar!</p>
-        </div>
-    </div>
+  <script>
+    const form = document.getElementById('nameForm');
+    const footerMessage = document.getElementById('footerMessage');
 
-    <script src="script.js"></script>
+    form.addEventListener('submit', function(event) {
+      event.preventDefault(); // Impede o envio do formulário padrão
+      const fullName = document.getElementById('fullName').value.trim();
+      if (fullName) {
+        footerMessage.textContent = `Eu te amo, ${fullName}!`;
+      } else {
+        footerMessage.textContent = 'Por favor, insira seu nome.';
+      }
+    });
+  </script>
 </body>
 </html>
